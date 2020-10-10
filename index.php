@@ -76,37 +76,6 @@
 
                 return false;
             });              
-           
-
-            /**
-             * Busca preco prazo
-             */
-            $("#form2").submit(function(e){
-                e.preventDefault();
-
-                $form = $("#form2").serialize();
-
-                $.ajax({
-                    url: "Controller.php",
-                    type: "POST",
-                    dataType: "html",
-                    data: $form,
-                    beforeSend: function()
-                    {
-                        $("#response2").html("Processando...");
-                    },
-                    success: function(data,status)
-                    {
-                        $("#response2").html(data);
-                        console.log(data+" formData >>"+$form);
-                    },
-                    error: function()
-                    {
-                        alert("Error inesperado");
-                    }
-                });
-                return false;
-            })
         });
     </script>
 </body>
